@@ -1,0 +1,55 @@
+
+h2{
+    text-align: center;
+    padding: 30px;
+
+    vertical-align: center;
+
+
+}
+
+
+div.form-check.form-check-label{
+    font-size: 25px;
+    text-align: left;
+
+
+}
+
+div.alert-heading{
+   font-size: 55px;
+    text-align: left;
+
+}
+
+p.content {
+   font-size: 25px;
+    padding: 5px;
+
+}
+label{
+    font-size: 25px;
+}
+
+.btn {
+  font-size: 18px;
+  background-color: #fff;
+  margin-top: 80px;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+
+  outline: none;
+  border: 1px solid #000;
+  transition: 0.3s;
+  width: 200px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+  border-radius: 6px ;
+  transform: scale(1.02);
+}
+
