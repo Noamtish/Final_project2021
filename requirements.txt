@@ -32,6 +32,8 @@ pandas==1.1.4
 passlib==1.7.4
 pipreqs==0.4.10
 protobuf==3.14.0
+psycopg2==2.8.6
+psycopg2-binary==2.8.6
 py==1.10.0
 pycparser==2.20
 pytest==3.0.5

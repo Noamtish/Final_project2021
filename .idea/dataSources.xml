@@ -11,5 +11,12 @@
         <property name="serverTimezone" value="UTC" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="dap6sst8tt2q2a@ec2-52-71-231-37.compute-1.amazonaws.com" uuid="56eef3cd-bcca-49a1-8d28-aef966f7ba2c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-52-71-231-37.compute-1.amazonaws.com:5432/dap6sst8tt2q2a</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

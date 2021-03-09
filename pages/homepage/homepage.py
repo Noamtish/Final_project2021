@@ -13,7 +13,7 @@ homepage = Blueprint('homepage', __name__, static_folder='static', static_url_pa
 @homepage.route('/home')
 def index():
 
-    if session['question_num']<5:
+    if session['question_num']<15:
         check = False
         while check == False:
             rand_id = randint(1, 60)
@@ -26,6 +26,8 @@ def index():
         session['articles_checked'] = ar_list
 
         articles = dbManager.fetch('select * from articles where id=%s', (rand_id,))
+
+
 
         if articles:
             session['question_num'] =session['question_num']+1

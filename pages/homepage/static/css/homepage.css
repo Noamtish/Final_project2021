@@ -11,24 +11,13 @@
 
 
 
-.grid-container {
-    display: grid;
-    grid-template-areas:
-'side main main main side';
-}
 
-.side {
-    grid-area: side;
-background-color: blue;
-}
-.main {
-    grid-area: main;
-background-color: red;
-}
+
+
 
 
 div.headline{
-    font-size: 100px;
+    font-size: 80px;
     text-align: center;
     font-weight:bold ;
     margin-left:5%;
@@ -37,7 +26,7 @@ div.headline{
 }
 
 div.content{
-   font-size: 50px;
+   font-size: 40px;
     text-align: left;
     margin-left:10%;
     margin-right:5%;
@@ -54,10 +43,12 @@ div.inputs{
 
 }
 input[type="range"]{
-   width: 700px;
+   width: 500px;
 
 
 }
+
+
 p{
     text-align: center;
     text-emphasis: black;
