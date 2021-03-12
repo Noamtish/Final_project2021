@@ -2,9 +2,9 @@
 
 
 
-h2{
+h1{
     text-align: center;
-    padding: 30px;
+    padding: 100px 30px;
 
     vertical-align: center;
 
@@ -24,8 +24,12 @@ div.alert-heading{
 }
 
 p.content {
-   font-size: 25px;
-    padding: 5px;
+   font-size: 20px;
+
+    margin-left: 20%;
+    display: block;
+
+
 
 }
 label{
@@ -33,6 +37,8 @@ label{
 }
 
 .btn {
+    margin-left: 45.7%;
+    vertical-align: center;
   font-size: 18px;
   background-color: #fff;
   margin-top: 80px;

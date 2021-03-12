@@ -17,19 +17,20 @@
 
 
 div.headline{
-    font-size: 80px;
+    font-size: 40px;
     text-align: center;
     font-weight:bold ;
-    margin-left:5%;
-    margin-right:5%;
+    margin-left:15%;
+    margin-right:15%;
 
 }
 
 div.content{
-   font-size: 40px;
+   font-size: 20px;
     text-align: left;
     margin-left:10%;
-    margin-right:5%;
+    margin-right:10%;
+    padding: 10px;
 
 
 }
@@ -50,8 +51,10 @@ input[type="range"]{
 
 
 p{
-    text-align: center;
+    font-size: 20px;
+    padding: 5px;
     text-emphasis: black;
+    display:inline;
 
 }
 label{
@@ -60,7 +63,12 @@ label{
 
 }
 
+p.num_of_ques{
+    text-align: center;
+    font-size: 20px;
+    display: block;
 
+}
 /*.btn{*/
 /*   position: relative;*/
 /*	display: flex;*/

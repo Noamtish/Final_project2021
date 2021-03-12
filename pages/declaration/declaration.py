@@ -13,5 +13,5 @@ declaration = Blueprint('declaration', __name__, static_folder='static', static_
 def index():
     session['articles_checked'] = []
     session['question_num']=0
-    return render_template('declaration.html')
+    return render_template('instructions.html')
 
