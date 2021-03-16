@@ -16,3 +16,11 @@ def index():
 
 
 
+@instructions.route('/instructions_to_homepage',methods=['GET'])
+def update_final_key():
+    final_id=request.args['worker_id']+"777BGU"
+    session['final_id']=final_id
+    return redirect(url_for('homepage.index'))
+
+
+

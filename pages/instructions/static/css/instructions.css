@@ -60,9 +60,10 @@ label{
   transform: scale(1.02);
 }
 
-.workerid {
+.worker_id {
     text-align: left;
     margin-left: 20%;
+     font-size: 20px;
 
 }
 /*#home .header {*/

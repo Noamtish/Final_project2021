@@ -31,11 +31,11 @@
  <br/>
 
 <br>
-                    <form action="/homepage" onclick="redirect()" >
+                    <form action="/instructions_to_homepage"  >
 
-                        <div class="workerid">
-                         <label  for="workerid" >Please insert your worker ID</label>
-                        <input type="text" id="workerid" placeholder="Worker ID" required><br>
+                        <div class="worker_id">
+                         <label  for="worker_id" >Please insert your worker ID: </label>
+                        <input type="text" name="worker_id" placeholder="Worker ID" required><br>
 
                         </div>
 
@@ -44,17 +44,17 @@
 
                      </form>
 
-<script>
-    function redirect() {
-
-  var id = document.getElementById("worker_id")
-  var id3=111
-  var  id2 =parseInt(id.value)
-     sessionStorage.setItem("User_ID",id2)
-         console.log(User_ID)
-        console.log(id3)
-}
-</script>
+{#<script>#}
+{#    function redirect() {#}
+{##}
+{#        var id = document.getElementById("workerid")#}
+{#        var id3=111#}
+{#        var  id2 =parseInt(id.value)#}
+{#     sessionStorage.setItem("User_ID",id2)#}
+{#         console.log(User_ID)#}
+{#        console.log(id3)#}
+{#}#}
+{#</script>#}
 
 {#    <script>#}
 {#    function generate_code() {#}

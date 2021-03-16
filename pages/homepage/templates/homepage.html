@@ -5,15 +5,15 @@
 {% block page_head_css %}
     <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/> <script src="{{  url_for('homepage.static', filename='js/homepage.js')}}"></script>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">#}
 
 {% endblock %}
 
 {% block page_body_main_content %}
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{#    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>#}
 
-    <div class="container-fluid">
-        <div class="col-xs-9 col-lg-7">
+{#    <div class="container-fluid">#}
+{#        <div class="col-xs-9 col-lg-7">#}
 
     <form action='/homepage_insert_result' method="post" id="form1">
 
@@ -49,9 +49,9 @@
             <br>
             <br>
 
-         <div class="col-xs-2 "><p > (not novel at all) 1 </p> </div> <div class="col-xs-5 "><input type="range"  min="1" max="7" id="rank_novelty" name="article_novelty_rank" required  ></div> <div class="col-xs-2 "> <p> 7 (very novel) </p></div>
+{#         <div class="col-xs-2 "><p > (not novel at all) 1 </p> </div> <div class="col-xs-5 "><input type="range"  min="1" max="7" id="rank_novelty" name="article_novelty_rank" required  ></div> <div class="col-xs-2 "> <p> 7 (very novel) </p></div>#}
 
-{#       <p>(not novel at all) 1 </p> <input type="range"  min="1" max="7" id="rank_novelty" name="article_novelty_rank" required> <p>7(very novel) </p>#}
+       <p>(not novel at all) 1 </p> <input type="range"  min="1" max="7" id="rank_novelty" name="article_novelty_rank" required> <p>7(very novel) </p>
             <br>
             <br>
             <br>
@@ -60,13 +60,16 @@
             <br>
 
 
-            <div class="col-xs-2 "> <p>(not outrageous at all) 1 </p></div> <div class="col-xs-5 "><input type="range" min="1" max="7" id="outrageous" name="article_outrage_rank" ></div><div class="col-xs-2 "><p> 7(very outrageous)</p></div>
+{#            <div class="col-xs-2 "> <p>(not outrageous at all) 1 </p></div> <div class="col-xs-5 "><input type="range" min="1" max="7" id="outrageous" name="article_outrage_rank" ></div><div class="col-xs-2 "><p> 7(very outrageous)</p></div>#}
+           <p>(not outrageous at all) 1 </p><input type="range" min="1" max="7" id="outrageous" name="article_outrage_rank" ><p> 7(very outrageous)</p>
+
         <br><br><br>
        <label for="rank_refuted" >On a scale of 1 to 7, rank how the refuted do you estimate the article to be</label>
         <br>
             <br>
 
-            <div class="col-xs-2 "> <p> (not refuted at all)1 </p></div><div class="col-xs-5 "> <input type="range" min="1" max="7" id="rank_refuted" name="article_refuted_rank" ></div><div class="col-xs-2 "><p>7(very refuted) </p></div>
+{#            <div class="col-xs-2 "> <p> (not refuted at all)1 </p></div><div class="col-xs-5 "> <input type="range" min="1" max="7" id="rank_refuted" name="article_refuted_rank" ></div><div class="col-xs-2 "><p>7(very refuted) </p></div>#}
+             <p> (not refuted at all)1 </p><input type="range" min="1" max="7" id="rank_refuted" name="article_refuted_rank" ><p>7(very refuted) </p>
 
             </div>
 
@@ -81,8 +84,8 @@
 
     </form>
 
-     </div>
-    </div>
+{#     </div>#}
+{#    </div>#}
 
     <script>
         document.getElementById("form1").addEventListener("submit",function(evt){
