@@ -4,16 +4,29 @@
 
 {% block page_head_css %}
     <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <script src="{{  url_for('homepage.static', filename='js/homepage.js')}}"></script>
 {% endblock %}
 
 {% block page_body_main_content %}
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <div class="container-fluid">
+    <div class="col">
 
-    <form action='/homepage_insert_result' method="post" onsubmit="clicked()">
+
+    <form action='/homepage_insert_result' method="post" id="form1">
+
+
+
+
+
+
+
     {% for article in articles %}
 
 
@@ -58,8 +71,8 @@
 
             <p> (not refuted at all)1 </p> <input type="range" min="1" max="7" id="rank_refuted" name="article_refuted_rank" ><p>7(very refuted) </p>
 
+            </div>
 
-        </div>
 
 
     {% endfor %}
@@ -69,27 +82,21 @@
     <p class="num_of_ques">{{ question_num }}  out of 15 </p>
 
 
-
-
-
-
-
     </form>
+</div>
+     </div>
 
     <script>
+        document.getElementById("form1").addEventListener("submit",function(evt){
+         if (document.getElementById('rank_refuted').value == 4 & document.getElementById('rank_novelty').value == 4 & document.getElementById('outrageous').value == 4 & clicked != true) {
+             evt.preventDefault();
+             alert("Please change the default values");
+             return false;
+         }
 
-    function clicked(){
 
 
-        if (document.getElementById('rank_refuted').value==4 & document.getElementById('rank_novelty').value==4 & document.getElementById('outrageous').value==4 & clicked!=true  ) {
-            -
-
-            alert("Please change the default grades")
-
-        }
-
-    }
-
+    })
 
     </script>
 

@@ -31,12 +31,44 @@
  <br/>
 
 <br>
-                    <form action="/homepage" >
+                    <form action="/homepage" onclick="redirect()" >
+
+                        <div class="workerid">
+                         <label  for="workerid" >Please insert your worker ID</label>
+                        <input type="text" id="workerid" placeholder="Worker ID" required><br>
+
+                        </div>
 
 
                          <input type="submit" class="btn btn-info"   value="Next page"  >
 
                      </form>
+
+<script>
+    function redirect() {
+
+  var id = document.getElementById("worker_id")
+  var id3=111
+  var  id2 =parseInt(id.value)
+     sessionStorage.setItem("User_ID",id2)
+         console.log(User_ID)
+        console.log(id3)
+}
+</script>
+
+{#    <script>#}
+{#    function generate_code() {#}
+{#        alert("insjs")#}
+{#        var worker_id=document.getElementById(worker_id)#}
+{##}
+{#        id2 = worker_id +"bgu1"#}
+{#        sessionStorage.setItem("final_id",id2)#}
+{##}
+{##}
+{##}
+{#    }#}
+{##}
+{#    </script>#}
 
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
