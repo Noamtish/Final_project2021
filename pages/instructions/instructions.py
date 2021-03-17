@@ -16,10 +16,18 @@ def index():
 
 
 
-@instructions.route('/instructions_to_homepage',methods=['GET'])
+@instructions.route('/instructions_to_homepage',methods=['GET','post'])
 def update_final_key():
+    session['worked_id']=request.args['worker_id']
+    worked_id=session['worked_id']
     final_id=request.args['worker_id']+"777BGU"
     session['final_id']=final_id
+    device=request.args['device']
+
+    query = dbManager.commit('insert into Pretest_users values (%s,%s)',
+                             (worked_id,device))
+
+
     return redirect(url_for('homepage.index'))
 
 

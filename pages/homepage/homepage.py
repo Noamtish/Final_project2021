@@ -48,7 +48,7 @@ def index():
 @homepage.route('/homepage_insert_result',methods=['POST'])
 def insert_result():
 
-
+        worker_id=session['worked_id']
         article_id=request.form['article_id']
         article_novelty_rank = request.form['article_novelty_rank']
         article_outrage_rank = request.form['article_outrage_rank']
@@ -58,12 +58,12 @@ def insert_result():
 
 
 
-        query=dbManager.commit('insert into Pretest_result values (%s,%s,%s,%s)',
-                                 (article_id,'novelty',article_novelty_rank,now))
-        query = dbManager.commit('insert into Pretest_result values (%s,%s,%s,%s)',
-                                 (article_id,'outrage', article_outrage_rank, now))
-        query = dbManager.commit('insert into Pretest_result values (%s,%s,%s,%s)',
-                                 (article_id,'refuted', article_refuted_rank, now))
+        query=dbManager.commit('insert into Pretest_result values (%s,%s,%s,%s,%s)',
+                                 (article_id,'novelty',article_novelty_rank,now,worker_id))
+        query = dbManager.commit('insert into Pretest_result values (%s,%s,%s,%s,%s)',
+                                 (article_id,'outrage', article_outrage_rank, now,worker_id))
+        query = dbManager.commit('insert into Pretest_result values (%s,%s,%s,%s,%s)',
+                                 (article_id,'refuted', article_refuted_rank, now,worker_id))
 
 
         return redirect(url_for('homepage.index'))
