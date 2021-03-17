@@ -57,11 +57,40 @@ input[type="range"]{
 
 
 p.start{
+
+
+    margin-left: 40%;
+
+}
+p.p11{
     font-size: 20px;
     padding: 5px;
     text-emphasis: black;
-    display:inline;
+
+    margin-left: 26%;
+
+}
+p.p21{
+    font-size: 20px;
+    padding: 5px;
+    text-emphasis: black;
+
+    margin-left: 26%;
+
+}
+p.p1{
+    font-size: 20px;
+    padding: 5px;
+
     margin-left: 22%;
+
+}
+p.p2{
+    font-size: 20px;
+    padding: 5px;
+    text-emphasis: black;
+
+    margin-left: 25%;
 
 }
 label{
