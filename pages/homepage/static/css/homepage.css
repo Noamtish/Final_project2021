@@ -35,26 +35,33 @@ div.content{
 
 }
 
-div.inputs{
-   font-size: 25px;
+div.inputs {
+    font-size: 25px;
     text-align: center;
-    margin-left:15%;
-    margin-right:15%;
+    margin-left: 15%;
+    margin-right: 15%;
     padding: 5px;
 
 }
+div.inputs.row{
+margin-left: 45%;
+
+}
+
 input[type="range"]{
-   width: 500px;
+   width: 250px;
+
 
 
 }
 
 
-p{
+p.start{
     font-size: 20px;
     padding: 5px;
     text-emphasis: black;
     display:inline;
+    margin-left: 22%;
 
 }
 label{
@@ -84,14 +91,14 @@ p.num_of_ques{
 /*justify-content: center;*/
 /*}*/
 
-.btn {
+.btn1 {
   font-size: 18px;
   background-color: #fff;
   margin-top: 80px;
   display: inline-block;
   padding: 10px;
   border-radius: 5px;
-    margin-left:45%;
+    margin-left:15%;
    margin-right:15%;
   outline: none;
   border: 1px solid #000;
@@ -100,7 +107,7 @@ p.num_of_ques{
   cursor: pointer;
 }
 
-.btn:hover {
+.btn1:hover {
   background-color: #000;
   color: #fff;
   border-radius: 6px ;
