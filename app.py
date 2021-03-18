@@ -18,11 +18,13 @@ app.register_blueprint(declaration)
 from pages.instructions.instructions import instructions
 app.register_blueprint(instructions)
 
-
-
 ## finish
 from pages.finish.finish import finish
 app.register_blueprint(finish)
+
+## finish_thanks
+from pages.finish_thanks.finish_thanks import finish_thanks
+app.register_blueprint(finish_thanks)
 
 ## Homepage
 from pages.homepage.homepage import homepage

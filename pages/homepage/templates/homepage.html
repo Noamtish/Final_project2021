@@ -34,8 +34,7 @@
         </div>
         <br><br>
 
-       <p>Please answer the following questions</p>
-            <br>
+
 
 
 
@@ -45,13 +44,15 @@
 
         <input type="hidden" name=article_id value={{article[0]}}>
 
-            <p> On a scale of 1 to 7, rank the novelty of the article</p>
+
             <br>
 
 
                  <div class="container">
                     <div class="inputs">
-
+                        <b style="font-size: 25px">Please answer the following questions :</b>
+                   <br><br>
+                         <b> On a scale of 1 to 7, rank the novelty of the article </b> <br><br>
                         <input type="radio" name="article_novelty_rank" id="1" value="1" required >
                              <label  for="1" >1 (not novel at all)</label><br>
                     <input type="radio" name="article_novelty_rank" id="2" value="2" >
@@ -90,7 +91,7 @@
             <br>
             <br>
 
-        <p>On a scale of 1 to 7, rank the outrageous of the article<p>
+
         <br>
 
 
@@ -98,7 +99,7 @@
 
                  <div class="container">
                 <div class="inputs">
-
+                <b> On a scale of 1 to 7, rank the outrageous of the article</b> <br><br>
                         <input type="radio" name="article_outrage_rank" id="1" value="1" required >
                              <label  for="1" >1 (not outrageous at all)</label><br>
                     <input type="radio" name="article_outrage_rank" id="2" value="2" >
@@ -125,13 +126,13 @@
 {#           <p>(not outrageous at all) 1 </p><input type="range" min="1" max="7" id="outrageous" name="article_outrage_rank" ><p> 7(very outrageous)</p>#}
 
         <br><br>
-       <p>On a scale of 1 to 7, rank how the refuted do you estimate the article to be<p>
+
         <br>
 
 
                  <div class="container">
                     <div class="inputs">
-
+                    <b>On a scale of 1 to 7, rank how the refuted do you estimate the article to be </b><br><br>
                         <input type="radio" name="article_refuted_rank" id="1" value="1" required >
                              <label  for="1" >1 (not refuted at all)</label><br>
                     <input type="radio" name="article_refuted_rank" id="2" value="2" >
@@ -165,7 +166,7 @@
 
     <input type="submit" value="submit" class="btn1" >
         <br>
-    <p class="num_of_ques">{{ question_num }}  out of 15 </p>
+    <p class="num_of_ques">{{ question_num }}  out of 10 </p>
 
 
     </form>

@@ -4,13 +4,19 @@ from datetime import datetime
 from random import randint
 
 
-# finish blueprint definition
+# finish_thanks blueprint definition
 finish = Blueprint('finish', __name__, static_folder='static', static_url_path='/finish', template_folder='templates')
 
 
 # Routes
 @finish.route('/finish')
 def index():
+    device = request.args['device']
+    worked_id = session['worked_id']
 
-    return render_template('exit.html')
+
+    query = dbManager.commit('insert into Pretest_users values (%s,%s)',
+                             (worked_id, device))
+
+    return render_template('finish_thanks.html',final_code=session["final_id"])
 

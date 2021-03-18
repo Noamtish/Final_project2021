@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'finish_thanks' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('finish_thanks.static', filename='css/finish_thanks.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+
+
+
+  <h1>Thanks for participating </h1>
+    <br><br>
+
+<h1>please return to Amazon Mturk<br>
+your confirmation code is: {{final_code}} </h1>
+
+{#<h6 style="text-align:center;">#}
+{#        <img src="{{ url_for('finish_thanks.static', filename='media/BGU.PNG') }}" width="200" height="200" alt="BGU"/>#}
+{#        <br>#}
+
+
+{#<script>#}
+{#        function workeridprint(){#}
+{#            console.log(sessionStorage.getItem("User_ID"))#}
+{#            let workerID = document.getElementById("worker_id")#}
+{#            workerID.textContent = sessionStorage.getItem("User_ID")+"001BGU"#}
+{#            console.log(workerID)#}
+{#        }#}
+{#        workeridprint()#}
+{##}
+{#    </script>#}
+{% endblock %}
+

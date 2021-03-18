@@ -13,7 +13,7 @@ homepage = Blueprint('homepage', __name__, static_folder='static', static_url_pa
 @homepage.route('/home')
 def index():
 
-    if session['question_num']<15:
+    if session['question_num']<2:
         check = False
         while check == False:
             rand_id = randint(1, 60)

@@ -7,15 +7,43 @@
 {% endblock %}
 
 {% block page_body_main_content %}
-  <h1>Thanks for participating </h1>
-    <br><br>
 
-<h1>please return to Amazon Mturk<br>
-your confirmation code is: {{final_code}} </h1>
 
-<h6 style="text-align:center;">
-        <img src="{{ url_for('finish.static', filename='media/BGU.PNG') }}" width="200" height="200" alt="BGU"/>
-        <br>
+
+        <form action="/finish">
+
+
+            <div class="form1">
+        <p>With which device are you answering the survey ?</p><br>
+
+                        <input type="radio" name="device" id="Phone" value="Phone" checked >
+                             <label  for="Phone" >Phone </label> <br>
+
+                        <input type="radio" name="device" id="Desktop" value="Desktop">
+                              <label  for="Desktop" >Desktop </label> <br>
+
+
+          <input type="submit" class="btn1 btn-info"   value="Next page"  >
+
+         </div>
+
+
+
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+{#<h6 style="text-align:center;">#}
+{#        <img src="{{ url_for('finish_thanks.static', filename='media/BGU.PNG') }}" width="200" height="200" alt="BGU"/>#}
+{#        <br>#}
 
 
 {#<script>#}
