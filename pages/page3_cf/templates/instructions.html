@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Instructions' %}
+
+{% block page_head_css %}
+{#   <link rel="stylesheet" href="{{ url_for('page3_cf.static', filename='css/page3_cf.css') }}"/>#}
+   <link rel="stylesheet" href="{{ url_for('page3_cf.static', filename='css/style.css') }}"/>
+
+{% endblock %}
+
+{% block page_body_main_content %}
+{#    <script>#}
+{#    function redirect(){#}
+{#        window.location.href = '/page5';#}
+{#    }#}
+{#    </script>#}
+
+<body class="center-body">
+    <div class="card">
+      <div class="title-2">Instructions</div>
+      <div class="flex flex-direction-column font-size-2 gap-2">
+        <div>
+          In the following task, you will be asked to read  10 news items and react on three possible ways( like, comment ,share ).
+            We would like you to act as if you are reading the items on your own news feed.
+
+
+        </div>
+          <div>
+            Pay attention that the share option only simulates the option to share with your friends only\public feed.
+
+          </div>
+        <div>
+          Browsing back and forth is not possible. Therefore, please progress to
+          the next page only when your answers are final.t
+        </div>
+        <div>
+          Please do not use any other audio devices, browsers, or webpages
+          during the task.The experiment should be performed alone and
+          independently.
+        </div>
+        <div>
+          Please do not transfer any information about the task to other
+          participants.
+        </div>
+        <div>
+          You can leave the task at any time, but you will not be able to
+          receive payment if you have not answered all questions.
+        </div>
+        <div>Completing the experiment will take 15 minutes on average.</div>
+        <div>
+          At the end of this task you will receive a verification code. Please
+          copy this code and paste it as required in MTURK in order to properly
+          get credit for this task.
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+          <form action="/instructions_to_homepage"  >
+
+               <button class="button bg-blue">Next Page</button>
+          </form>
+      </div>
+    </div>
+  </body>
+
+
+{##}
+{#<div class="alert alert-info" role="alert">#}
+{##}
+{#  <h1>Instructions</h1>#}
+{##}
+{#    <p class="content" >In the following task, You will be exposed to 10 articles from different fields (politics, sports and gossip) and you will asked to rate these articles according to 3 different measures.</p>#}
+{#  <p class="content" >Browsing back and forth is not possible. Therefore, please progress to the next page only when your answers are final.</p>#}
+{#  <p class="content" >Please do not use any other audio devices, browsers, or webpages during the task.The experiment should be performed alone and independently.</p>#}
+{##}
+{#  <p class="content" >Please do not transfer any information about the task to other participants.</p>#}
+{#  <p class="content" >You can leave the task at any time, but you will not be able to receive payment if you have not answered all questions.</p>#}
+{#  <p class="content" >Completing the experiment will take 20 minutes on average.</p>#}
+{#  <p class="content" >At the end of this task you will receive a verification code. Please copy this code and paste it as required in MTURK in order to properly get credit for this task.</p>#}
+{##}
+{##}
+{#</div>#}
+{##}
+{# <br/>#}
+{##}
+{#<br>#}
+{#                    <form action="/instructions_to_homepage"  >#}
+{##}
+{#                        <div class="worker_id">#}
+{#                            <label  for="worker_id" >Please insert your worker ID: </label>#}
+{#                        <input type="text" name="worker_id" placeholder="Worker ID" required><br>#}
+{##}
+{##}
+{#                        </div>#}
+{##}
+{##}
+{#                         <input type="submit" class="btn btn-info"   value="Next page"  >#}
+{##}
+{#                     </form>#}
+
+{#<script>#}
+{#    function redirect() {#}
+{##}
+{#        var id = document.getElementById("workerid")#}
+{#        var id3=111#}
+{#        var  id2 =parseInt(id.value)#}
+{#     sessionStorage.setItem("User_ID",id2)#}
+{#         console.log(User_ID)#}
+{#        console.log(id3)#}
+{#}#}
+{#</script>#}
+
+{#    <script>#}
+{#    function generate_code() {#}
+{#        alert("insjs")#}
+{#        var worker_id=document.getElementById(worker_id)#}
+{##}
+{#        id2 = worker_id +"bgu1"#}
+{#        sessionStorage.setItem("final_id",id2)#}
+{##}
+{##}
+{##}
+{#    }#}
+{##}
+{#    </script>#}
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+{#    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>#}
+{#    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>#}
+{#    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>#}
+{#
+#}
+
+{##}
+{#    <form action='/instructions_insert_result' method="post">#}
+{#    {% for article in articles %}#}
+{##}
+{##}
+{#        <div class="headline">#}
+{#      {{ article.Primary_headline }}#}
+{#        </div>#}
+{#        <br>#}
+{#        <div class="content">#}
+{#        {{ article.content }}#}
+{##}
+{#        </div>#}
+{#        <br>#}
+{#        <div class="inputs">#}
+{#       <h3>Please answer the following questions</h3>#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#        <input type="hidden" name=article_id value={{article.id}}>#}
+        {#            <label for="article_novelty_rank" >1
+        <input type="radio" value="1" id="rank_novelty" name="article_novelty_rank">
+                </label>
+            <label for="article_novelty_rank" >2
+         <input type="radio" value="2" id="rank_novelty" name="article_novelty_rank">
+                </label>
+             <label for="article_novelty_rank" >3
+              <input type="radio" value="3" id="rank_novelty" name="article_novelty_rank">
+               </label>
+                 <label for="article_novelty_rank" >4
+                     <input type="radio" value="4" id="rank_novelty" name="article_novelty_rank" checked="True">
+                     </label>
+            <label for="article_novelty_rank" >5
+              <input type="radio" value="5" id="rank_novelty" name="article_novelty_rank">
+            </label>
+            <label for="article_novelty_rank" >6
+              <input type="radio" value="6" id="rank_novelty" name="article_novelty_rank">
+            </label>
+            <label for="article_novelty_rank" >7
+            <input type="radio" value="7" id="rank_novelty" name="article_novelty_rank">
+            </label>#}
+{#            <label for="rank_novelty"  >On a scale of 1(not novel at all) to 7(very novel) rank the novelty of the article</label>#}
+{#        <br>#}
+{##}
+{##}
+{##}
+{##}
+{#           1 <input type="range"  min="1" max="7" id="rank_novelty" name="article_novelty_rank"> 7#}
+{##}
+{#            <option value="1" label="1"></option>#}
+{#            <option value="7" label="7"></option>#}
+{##}
+{#               <br>#}
+{##}
+{#        <label for="rank_outrages" >On a scale of 1(not outrage at all) to 7(very outrage) rank the outrages of the article</label>#}
+{#        <br>#}
+{##}
+{#       1 <input type="range" min="1" max="7" id="rank_outrages" name="article_outrage_rank"> 7#}
+{#        <br>#}
+{#       <label for="rank_refuted" >On a scale of 1(not refuted at all) to 7(very refuted) rank the refuted of the article</label>#}
+{#        <br>#}
+{##}
+{#        1 <input type="range" min="1" max="7" id="rank_refuted" name="article_refuted_rank"> 7#}
+{##}
+{##}
+{#        </div>#}
+{##}
+{##}
+{##}
+{#    {% endfor %}#}
+{##}
+{#    <input type="submit" value="submit" class="btn">#}
+{#        <br>#}
+{#    <p>{{ question_num }}  out of 15 </p>#}
+{##}
+{#    </form>#}
+
+
+
+
+{% endblock %}

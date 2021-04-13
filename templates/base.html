@@ -28,6 +28,7 @@ Base page blocks:
  #}
 <!DOCTYPE html>
  <html lang="{{ page_lang|default("en", true) }}">
+
     <head>
     {% block page_head %}
         {# Title #}
@@ -37,6 +38,8 @@ Base page blocks:
         {% block page_head_meta %}
             <base href="/"/>
             <meta charset="UTF-8"/>
+             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta name="author" content="Yaron Harush Noam Tishkevich"/>
             <meta name="description" content="pretest"/>
             <meta name="keywords" content="flask, lean, skeleton, project, structure, environment, setup, template, fullstack, web, development, app, university, education"/>
@@ -53,6 +56,7 @@ Base page blocks:
         <base href="/"/>
 
         {# CSS #}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}"/>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"/>
 
         {% block page_head_css %}{% endblock %}
@@ -103,7 +107,7 @@ Base page blocks:
         {% endblock %}
 
         {# JS #}
-        <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/js.js') }}"></script>
 
         {% block page_body_js %}{% endblock %}
     </body>

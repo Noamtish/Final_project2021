@@ -1,0 +1,8 @@
+.list {
+}
+.card {
+  justify-content: flex-start !important;
+}
+.card > div {
+  width: 100%;
+}

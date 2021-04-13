@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'declaration' %}
+
+{% block page_head_css %}
+{#    <link rel="stylesheet" href="{{ url_for('page2.static', filename='css/page2.css') }}"/>#}
+    <link rel="stylesheet" href="{{ url_for('page2.static', filename='css/style.css') }}"/>
+
+{% endblock %}
+
+{% block page_body_main_content %}
+
+
+<body class="center-body">
+    <div class="card">
+      <div class="title-2">
+        Informed consent to participate in an experiment
+      </div>
+      <div class="flex flex-direction-column font-size-2  gap-2">
+        <div>
+          1. You are about to participate in a digital experiment as part of a
+          decision-making study.
+        </div>
+        <div>
+          2. During the experiment, you will be presented with several web-pages
+          and you will be asked to answer several questions, some of which are
+          mandatory and others are not.
+        </div>
+        <div>
+          3. You can withdraw your participation at any time or refuse to answer
+          any question; however, participants who will not complete the required
+          tasks and reach the completion page will not receive credit for their
+          participation.
+        </div>
+
+
+
+        <div>
+          4. Upon completion of the experiment, you will reach a completion page
+          in which you will receive a verification code. This code will verify
+          that you completed the experiment in Amazon Mechanical Turk so that
+          you will receive credit for this task.
+        </div>
+        <div>
+          5. Confidentiality as to the identity of each participant is
+          guaranteed. It is impossible to connect between the personal details
+          of the participant and the answers and data provided during the
+          experiment.
+        </div>
+        <div>
+          6. There is no time limit for completing the experiment, which should
+          take about 15 minutes.
+        </div>
+        <div>
+          7. The experiment has been approved by Ben-Gurion University’s ethics
+          committee.
+        </div>
+        <div>
+          8. You can raise any question about the experiment by sending an email
+          to hyaron@post.bug.ac.il
+        </div>
+
+        <div>9. Please check one of the following boxes:</div>
+        <div class="flex flex-direction-column gap-2">
+          <div class="form-check">
+<br>
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"  required name="terms" >
+  <label class="form-check-label" for="defaultCheck1">
+    I hereby confirm that I have understood the above and freely give my consent to participate in this experiment  </p>
+  </label>
+<br>
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2"  required name="terms" >
+  <label class="form-check-label" for="defaultCheck2">
+    I do not confirm</p> <br>
+  </label>
+
+</div>
+
+  <script>
+
+function checkAgree()
+{
+   if (document.getElementbyId("defaultCheck1").getAttribute("checked") )//checkbox is checked
+   {
+       location.href = "/page3_cf"; //load the next page.
+   }
+   else
+   {
+       Alert("You need to check the box before you can continue");
+   }
+
+}
+
+document.getElementById("proceed-button").addEventListener("click", checkAgree ,false);
+
+
+</script>
+
+
+
+
+
+
+<script>
+
+
+var i=0;
+
+function redirect_to_instruction() {
+
+  var checkBox1 = document.getElementById("defaultCheck1");
+  var checkBox2 = document.getElementById("defaultCheck2");
+  if (checkBox2.checked == true && checkBox1.checked==true){
+   	alert("You must select only one option");
+
+    }
+ if (checkBox2.checked == false && checkBox1.checked==false){
+   	alert("Please indicate that you accept the Terms and Conditions");
+
+    }
+
+ 	if (checkBox2.checked == true && i>0){
+        window.location.href = '/exit';
+
+	}
+   if (checkBox2.checked == true && i==0 && checkBox1.checked == false ){
+   	i= 1;
+         alert("This choice will lead to your leaving the site.");
+
+    }
+
+ if (checkBox2.checked == false && checkBox1.checked == true ){
+   	   window.location.href = '/page3_cf';
+    }
+
+
+
+}
+
+
+
+</script>
+
+
+</p>
+
+          <div>
+               <div class="flex justify-center" >
+           <a onclick="redirect_to_instruction() ">  <button class="button bg-blue">Next Page</button></a>
+
+               </div>
+          </div>
+        </div>
+         </div>
+
+      </div>
+    </div>
+  </body>
+
+{% endblock %}
+

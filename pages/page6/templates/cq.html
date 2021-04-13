@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'exit' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('cq.static', filename='css/exit.css') }}"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+{% endblock %}
+
+{% block page_body_main_content %}
+        <script>
+    function redirect_to_finish(){
+        window.location.href = '/finish_thanks';
+    }
+    </script>
+   <body style="padding:30px; font-size: larger">
+    ​
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <script src="page5.js"></script>
+<div class="alert alert-info" role="alert">
+  <h4 class="alert-heading"></h4>
+<h4>
+  <p>   Please answer the following questions <br/> </h4>
+
+  <hr>
+  <p class="mb-0"></p>
+</div>
+
+
+
+     <!--  <!DOCTYPE html> -->
+
+
+        <form id= "formPage5" action="/cq_insert_result" method="post">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">Age</label>
+     <br>
+      <input type="number" name="age" id="inp_inf1" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Gender</label>
+      <select class="custom-select" name="Gender" id="inp_inf2" required>
+        <option selected disabled value="">Choose...</option>
+         <option value="F">Female </option>
+           <option value="M">Male</option>
+           <option value="O">Other</option>
+      </select>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefaultUsername">Education level</label>
+      <div class="input-group">
+       <select class="custom-select"    name="Education level" id="inp_inf3" required>
+        <option selected disabled value="">Choose...</option>
+           <option value="No schooling completed">No schooling completed</option>
+           <option value="Nursery school to 8th grade">Nursery school to 8th grade</option>
+           <option value="Some high school, no diploma">Some high school, no diploma</option>
+           <option value="High school graduate, diploma or the equivalent">High school graduate, diploma or the equivalent</option>
+           <option value="Some college credit, no degree">Some college credit, no degree</option>
+           <option value="Trade/technical/vocational training">Trade/technical/vocational training</option>
+           <option value="Associate degree">Associate degree</option>
+           <option value="Master’s degree">Master’s degree</option>
+           <option value="Professional degree">Professional degree</option>
+           <option value="Doctorate degree">Doctorate degree</option>
+
+      </select>
+      </div>
+
+</div>
+
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">What is your political view </label>
+      <select class="custom-select" name="political view" id="inp_inf8" required>
+        <option selected disabled value="">Choose...</option>
+         <option value="Republican">Republican</option>
+           <option value="Democratic">Democratic</option>
+           <option value="Else">Else</option>
+      </select>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">On average how many daily hours do you use your computer (not for work perpases)</label>
+      <select class="custom-select"  name= "computer use" id="inp_inf14" required>
+        <option selected disabled value="">Choose...</option>
+        <option value="0-1">0-1</option>
+        <option value="1-3">1-3</option>
+        <option value="4-6">4-6</option>
+        <option value="7+">7+</option>
+      </select>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefaultUsername">On average how many daily hours do you use a mobile phone (not for work perpases)  </label>
+      <div class="input-group">
+       <select class="custom-select"  name= "mobile use" id="inp_inf15" required>
+        <option selected disabled value="">Choose...</option>
+        <option value="0-1">0-1</option>
+           <option value="1-3">1-3</option>
+           <option value="4-6">4-6</option>
+           <option value="7+">7+</option>
+      </select>
+
+      </div>
+
+ </div>
+
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Which device you performed the experiment on?
+<br></br> </label>
+      <select class="custom-select"   name= "device" id="inp_inf13" required>
+        <option selected disabled value="">Choose...</option>
+        <option value="Desktop">Desktop</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Smartphone">Smartphone</option>
+        <option value="Tablet">Tablet</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+</div>
+<br>
+
+ <h4>   Here are some questions you will need to rate on a scale of 1-7 </h4>
+            <div class="form-row">
+          <div class="col-md-4 mb-3">
+      <label for="validationDefault02">What is the size of the place you are currently in while doing the experiment?  (1- very small 7- very big )</label>
+      <select class="custom-select"  name="place_size" id="inp_inf10" required>
+        <option selected disabled value="">Choose...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      <option value="3">3</option>
+     <option value="4">4</option>
+        <option value="5">5</option>
+      <option value="6">6</option>
+     <option value="7">7</option>
+      </select>
+    </div>
+
+
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Are you in a private or public place?  (1- Private 7- Public)</label>
+
+      <select class="custom-select" name="level_of_privacy" id="inp_inf11" required>
+        <option selected disabled value="">Choose...</option>
+              <option value="1">1</option>
+           <option value="2">2</option>
+ 		<option value="3">3</option>
+		<option value="4">4</option>
+           <option value="5">5</option>
+ 		<option value="6">6</option>
+		<option value="7">7</option>
+      </select>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <label for="validationDefaultUsername">
+
+Are you in a confined space or open space? (1- closed space 7- Open space)</label>
+<div class="input-group">
+       <select class="custom-select" name="level_of_confined_space" id="inp_inf12" required>
+        <option selected disabled value="">Choose...</option>
+         <option value="1">1</option>
+           <option value="2">2</option>
+ 		<option value="3">3</option>
+		<option value="4">4</option>
+           <option value="5">5</option>
+ 		<option value="6">6</option>
+		<option value="7">7</option>
+
+      </select>
+
+      </div>
+
+ </div>
+
+            </div>
+            <div class="form-row">
+ <div class="col-md-4 mb-3">
+    <label for="validationDefault02">How would you rate the level of noise in your surrounding ? (1- very quiet 7- very noisy)
+
+ </label>
+    <select class="custom-select" name="level_of_noise" id="inp_inf16" required>
+      <option selected disabled value="">Choose...</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    <option value="3">3</option>
+   <option value="4">4</option>
+      <option value="5">5</option>
+    <option value="6">6</option>
+   <option value="7">7</option>
+
+    </select>
+  </div>
+
+
+  <div class="col-md-4 mb-3">
+    <label for="validationDefault02">What is the amount of light in the environment you are in?  (1- very bright 7- very dark) )</label>
+    <select class="custom-select" name="level_of_light" id="inp_inf17" required>
+      <option selected disabled value="">Choose...</option>
+      <option value="1">1</option>
+           <option value="2">2</option>
+ 		<option value="3">3</option>
+		<option value="4">4</option>
+           <option value="5">5</option>
+ 		<option value="6">6</option>
+		<option value="7">7</option>
+
+    </select>
+  </div>
+  <div class="col-md-4 mb-3">
+    <label for="validationDefaultUsername">How crowded is the environment you are in (1- not crowded at all 7- very crowded)  </label>
+    <div class="input-group">
+     <select class="custom-select" name="level_of_croweded_env" id="inp_inf18" required>
+      <option selected disabled value="">Choose...</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    <option value="3">3</option>
+   <option value="4">4</option>
+      <option value="5">5</option>
+    <option value="6">6</option>
+   <option value="7">7</option>
+
+    </select>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<!-- <h6 style="text-align:center;"> Please enter your Amazon Worker ID: <input type="text" name="workerid" id="workerid" required> </h6> -->
+
+
+
+
+
+
+
+ </div>
+
+
+
+  <br>
+            <div class="flex justify-center">
+  <button type="submit"  class="button bg-blue mt-4" >Submit</button>
+      </div>
+        </div>
+
+
+
+</form>
+
+
+
+
+
+
+
+
+  </body>
+​
+
+
+
+{% endblock %}

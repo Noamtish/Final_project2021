@@ -12,5 +12,5 @@ finish_thanks = Blueprint('finish_thanks', __name__, static_folder='static', sta
 @finish_thanks.route('/finish_thanks')
 def index():
 
-    return render_template('finish_thanks.html')
+    return render_template('finish_thanks.html',final_code=session["final_id"])
 

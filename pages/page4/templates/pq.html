@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'preferences questionnaire' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('pq.static', filename='css/pq.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<body class="center-body">
+
+<div class="card">
+<div><h1 class="title">Before we start, please answer two questions regarding your personal interests</h1></div>
+    <strong class="font-size-3">Please choose your favorite topic: </strong> <br>
+
+<div>
+    <form action="/interests_after_pick" method="get" id="form1">
+<select name="topic1" id="topic1">
+  <option value="Sport">Sport</option>
+  <option value="Politics">Politics</option>
+  <option value="Gossip">Gossip</option>
+
+</select>
+</div>
+<br><br>
+
+    <strong class="font-size-3">Please choose your second favorite topic (you can't choose the same topic again): </strong> <br>
+<div>
+<select name="topic2" id="topic2">
+  <option value="Sport">Sport</option>
+  <option value="Politics">Politics</option>
+  <option value="Gossip">Gossip</option>
+
+</select>
+    </div>
+        <br> <br>
+        <input type="submit" value="next page" class="button bg-blue">
+    </form>
+
+        <script>
+        document.getElementById("form1").addEventListener("submit",function(evt){
+
+         if (document.getElementById("topic2").value ==  document.getElementById("topic1").value) {
+
+             evt.preventDefault();
+             alert("Please pick different topics");
+             return false;
+         }
+
+
+
+    })
+
+    </script>
+
+{#          <a onclick="redirect_to_homepage() "> <button class="button bg-blue">Next page</button></a>#}
+{#      </div>#}
+
+    </div>
+
+</body>
+{% endblock %}

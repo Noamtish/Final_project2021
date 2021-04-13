@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'personal code' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('fc.static', filename='css/style.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+        <script>
+    function redirect_to_declaration(){
+        window.location.href = '/page2';
+    }
+    </script>
+ <body class="center-body">
+    <div class="card">
+      <div><h1 class="title">Welcome</h1></div>
+{#      <div class="flex align-items-center gap-2">#}
+{#        <img src="{{ url_for('fc.static', filename='media/logo.png') }}" alt="logo" style="width: 100px" />#}
+{#        <strong class="font-size-3"> Ben-Gurion University of the Negev</strong>#}
+
+{#      </div>#}
+      <div><strong>Please enter your personal code</strong></div>
+      <div class="flex align-items-center gap-1">
+
+     <form action="/page2"  >
+         <strong>Code:</strong>
+
+
+          <input type="text" name="worker_id" placeholder="Personal Code" required />
+
+        <div>
+<br>
+              <div class="flex justify-center">
+           <button type="submit" class="button bg-blue">Next page</button>
+      </div>
+            </div>
+</form>
+      </div>
+    </div>
+  </body>
+
+
+
+
+
+{% endblock %}
