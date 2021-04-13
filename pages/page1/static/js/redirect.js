@@ -6,7 +6,7 @@ function redirect()
     alert('in redirect')
   var id = document.getElementById("Personal_code");
 
- var  id2 =parseInt(id.value) ;
+    var  id2 =parseInt(id.value) ;
  sessionStorage.setItem("User_ID",id2)
 
 ;

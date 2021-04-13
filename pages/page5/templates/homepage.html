@@ -138,9 +138,7 @@
             </strong>
           </div>
           <div class="full-width mt-2">
-            <img
-              src="{{  article[8] }}"
-              class="object-position-cover full-width"
+            <img src="{{ url_for('page5.static', filename='media/' + article[8]) }}"class="object-position-cover full-width"
             />
           </div>
 
@@ -209,7 +207,7 @@
     <div class="background-black hide"  id="background-black">
       <div class="share_content">
 
-          You decided to share this post with your Facebook Friends!<br/>
+          You decided to share this post with your {{publicity}}!<br/>
 
             Why are you want to share this post?
 
@@ -245,7 +243,7 @@
        <div class="background-black hide"  id="background-blacking">
       <div class="share_content">
 
-          Your behave reflects the absence of activty   <br/><br>
+          Your behave reflects the absence of any activity   <br/><br>
 
            Are you sure you want to move on?<br>
 
@@ -308,7 +306,9 @@ const comment_on_post = () => {
   setVisible_to_comment(false);
   {#alert(document.getElementById("comment_input").value);#}
   {#document.getElementById("comment_input").value=1;#}
+
   document.getElementById("comment_input_to_db").value=document.getElementById("comment_input").value;
+    alert('you have just commented on this post');
 };
 
 const disablesharing = () => {};

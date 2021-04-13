@@ -79,11 +79,11 @@ def index():
 
                 session['question_num'] = session['question_num'] + 1
 
-                return render_template('homepage.html', articles=articles,article_id=articles[0], question_num=session['question_num'],publisher_name=session['publisher_name'][session['question_num']-1])
+                return render_template('homepage.html', articles=articles,article_id=articles[0], question_num=session['question_num'],publisher_name=session['publisher_name'][session['question_num']-1],publicity=session['publicity'])
 
 
 
-    return render_template('cq.html', final_code=session['final_id'])
+    return render_template('cq.html')
 
 
 
@@ -96,7 +96,7 @@ def index():
 @homepage.route('/homepage_insert_result',methods=['POST'])
 def insert_result():
 
-        worker_id=session['worked_id']
+        Personal_code=session['Personal_code']
         article_id=request.form['article_id']
         liked=request.form['liked']
         keep_reading=0
@@ -105,23 +105,23 @@ def insert_result():
         now = datetime.now()
         print("now =", now)
         comment_input = request.form['comment_input_to_db']
-        article_order_number=session['question_num']-1
+        article_order_number=session['question_num']
 
 
 
         query=dbManager.commit('insert into facebook_results values (%s,%s,%s,%s,%s,%s,%s,%s,%s)',
-                                  (worker_id,article_id,liked,article_order_number,keep_reading,shared,share_input,now,comment_input))
+                                  (Personal_code,article_id,liked,article_order_number,keep_reading,shared,share_input,now,comment_input))
         return redirect(url_for('page5.index'))
 @homepage.route('/homepage_insert_no_result', methods=['POST'])
 def insert_no_result():
-            worker_id = session['worked_id']
+            Personal_code = session['Personal_code']
             article_id1 = request.form['article_id']
             article_id= re.sub("[^0-9]", "",article_id1 )
-
+            now = datetime.now()
             article_order_number = session['question_num']
 
-            query = dbManager.commit('insert into facebook_results(worker_id,article_id,question_order) values (%s,%s,%s)',
-                                     (worker_id, article_id, article_order_number))
+            query = dbManager.commit('insert into facebook_results(Personal_code,article_id,question_order,insert_date) values (%s,%s,%s,%s)',
+                                     (Personal_code, article_id, article_order_number,now))
 
 
             return redirect(url_for('page5.index'))

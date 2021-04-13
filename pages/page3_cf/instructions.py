@@ -12,7 +12,7 @@ instructions = Blueprint('page3_cf', __name__, static_folder='static', static_ur
 @instructions.route('/page3_cf')
 def index():
 
-    return render_template('instructions.html')
+    return render_template('instructions.html',publicity=session['publicity'])
 
 
 

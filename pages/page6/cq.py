@@ -17,7 +17,11 @@ def index():
 
 @cq.route('/cq_insert_result',methods=['POST'])
 def insert_result():
-    worker_id = session['worked_id']
+    Personal_code=session['Personal_code']
+    session['worker_id'] = request.form['worker_id']
+    final_id = request.form['worker_id'] + "777BGU"
+    session['final_id'] = final_id
+    worker_id=session['worker_id']
     age=request.form['age']
     topic1=session['topic1']
     topic2=session['topic2']
@@ -35,7 +39,7 @@ def insert_result():
     level_of_croweded_env=request.form['level_of_croweded_env']
 
 
-    query=dbManager.commit('insert into facebook_users values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
-                             (worker_id,device,topic1,topic2,age,gender,Education_level,computer_use,mobile_use,political_view ,place_size,level_of_privacy,level_of_confined_space,level_of_noise,level_of_light,level_of_croweded_env))
+    query=dbManager.commit('insert into facebook_users values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
+                             (Personal_code,device,topic1,topic2,age,gender,Education_level,computer_use,mobile_use,political_view ,place_size,level_of_privacy,level_of_confined_space,level_of_noise,level_of_light,level_of_croweded_env,worker_id))
 
     return redirect(url_for('finish_thanks.index'))

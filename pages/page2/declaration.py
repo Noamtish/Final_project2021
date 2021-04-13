@@ -9,12 +9,16 @@ declaration = Blueprint('page2', __name__, static_folder='static', static_url_pa
 
 
 # Routes
-@declaration.route('/page2')
-def index():
-    session['worked_id'] = request.args['worker_id']
-
-    final_id = request.args['worker_id'] + "777BGU"
-    session['final_id'] = final_id
+@declaration.route('/page2_check_device/<id>')
+def index(id):
+    id=int(id)
+    session['Personal_code'] =id
+    if id <200000 or (id>=300000 and id<400000 ):
+        session['publicity']='news feed'
+    else:
+        session['publicity'] = 'facebook friends'
+    # final_id = request.args['worker_id'] + "777BGU"
+    # session['final_id'] = final_id
     session['articles_checked'] = []
     session['question_num']=0
     return render_template('declaration.html')
